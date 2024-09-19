@@ -1,24 +1,25 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../bootstrap.min.css'
+import'../App.css'
 
-const Noticia = () => {
+const Noticia = ({titulo,descripcion,link,img}) => {
     return (
-        <div className='col-3 my-2 ms-2'>
-
-            <Card>
+        <article className='col-12 col-md-6 col-lg-3 my-2'>
+            <Card className='h-100'>
             <div className='text-center'>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img className='tamañoimg' variant="top" src={img} />
       <Card.Body>
-        <Card.Title>titulo api</Card.Title>
-        <Card.Text>
-          contenido api
+        <Card.Title className='fw-bolder'>{titulo}</Card.Title>
+        <Card.Text size='sm'>
+          {
+          descripcion
+          }
         </Card.Text>
-        <Button variant="info">Ver noticia completa</Button>
+        <a className='btn btn-info' href={link}>Ver noticia completa</a>
       </Card.Body>
             </div>
     </Card>
-        </div>
+        </article>
     );
 };
 
